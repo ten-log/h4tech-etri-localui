@@ -1,45 +1,77 @@
 import Webcam from "react-webcam";
 import './UwbForm.css';
-const UwbForm =({tagId, setTagId, width, height, tagInfo, uwbData, pointColor, lati, longi})=>{
 
-// let swap = 0; 색 랜덤위한 함수
-// let res;
-// let selColor =(uwb)=>{
-//   let numId = Number(uwb.id);
-//   let ranColor = "#" + Math.round(Math.random() * 0xffffff).toString(16);
-//   if(swap == numId)
-//   {
-//     return res;
-//   }else{
-//     res = ranColor;
-//     swap = numId;
-//   }
-//   return res;
-// }
+
+// import {Button} from 'antd';
+const UwbForm =({GoogleMaps, tagId, setTagId, width, height, tagInfo, uwbData, pointColor, lati, longi})=>{
   return(
       <div className='UwbForm'>
         <div className='UwbForm1'>
-            <Webcam audio={false} width={width} height={height} />
+          <GoogleMaps setTagId={setTagId} uwbData={uwbData} pointColor={pointColor}/>
         </div>
         <div className='UwbForm2'>
-            <div className='UwbForm_ground'>
-              <img src='./ground.png' alt='imageFile' />
-
-              {uwbData&&uwbData.map((dataArr,indexArr)=>{
-                    return dataArr.map((data, index)=>{
-                        return <div key={index} className='UwbForm_point' onClick={()=>{ setTagId(data.id)}}
-                              style={{position:'absolute',  backgroundColor:`${pointColor(data.id)}`, top:`${lati(dataArr[index])}%`, left:`${longi(dataArr[index])}%` }} />
-                })
-             })}
+            <div className='UwbForm2_Top'>
+              <Webcam audio={false} width={width} height={height} />
+            <table className="PName">
+                <thead>
+                  <td>소속</td>
+                  <td>h4tech</td>
+                </thead>
+                <tbody>
+                  <th>이름</th>
+                  <td>최열</td>
+                </tbody>
+            </table>
             </div>
-        </div>
-        <div className='UwbForm3'>
-            {tagId!=0?<li>아이디: {tagInfo(tagId).id}</li>:<div>안된다</div>}
-            {tagId!=0?<li>movacc: {tagInfo(tagId).movacc}</li>:<div>안된다</div>}
-            {tagId!=0?<li>vel: {tagInfo(tagId).vel}</li>:<div>안된다</div>}
-            {tagId!=0?<li>avgvel: {tagInfo(tagId).avgvel}</li>:<div>안된다</div>}
-            {tagId!=0?<li>accel: {tagInfo(tagId).accel}</li>:<div>안된다</div>}
-
+            <div className='UwbForm2_Bottom'>
+            <table className="PInfo">
+              {/*클릭했을때 태그 아이디와 정보를 넘겨줘서 테이블에 그려줍니다. */}
+                    <thead>
+                      <tr>
+                        <th scope="cols">해당태그의 병사지표</th>
+                        <th scope="cols">이전기록과 비교</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        {tagId!=0?<li>movacc: {tagInfo(tagId).movacc}</li>:<li>안되나</li>}
+                      </th>
+                      <td>내용이 들어갑니다.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        {tagId!=0?<li>vel: {tagInfo(tagId).vel}</li>:<li>안되나</li>}
+                      </th>
+                      <td>내용이 들어갑니다.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        {tagId!=0?<li>avgvel: {tagInfo(tagId).avgvel}</li>:<li>안되나</li>}
+                      </th>
+                      <td>내용이 들어갑니다.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        {tagId!=0?<li>avgvel: {tagInfo(tagId).avgvel}</li>:<li>안되나</li>}
+                      </th>
+                      <td>내용이 들어갑니다.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        {tagId!=0?<li>avgvel: {tagInfo(tagId).avgvel}</li>:<li>안되나</li>}
+                      </th>
+                      <td>내용이 들어갑니다.</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        {tagId!=0?<li>avgvel: {tagInfo(tagId).avgvel}</li>:<li>안되나</li>}
+                      </th>
+                      <td>내용이 들어갑니다.</td>
+                    </tr>
+                  </tbody>
+            </table>
+          </div>
         </div>
       </div>
   );

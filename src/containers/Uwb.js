@@ -2,10 +2,12 @@ import {useEffect, useState} from 'react';
 import UwbForm from '../components/UwbForm';
 import {useDispatch, useSelector} from 'react-redux';
 import {locationData} from '../modules/uwb';
+import GoogleMaps from '../lib/googleAPI/GoogleMaps';
 
 const Uwb =()=>{
-const width='90%';          //카메라 비율 조정
-const height='80%';         //카메라 비율 조정
+
+const width='50%';          //카메라 비율 조정
+const height='30%';         //카메라 비율 조정
 const dispatch= useDispatch(); //dispatch 추가
 const [tagId, setTagId] =useState(0);  //가속도등의 추가 정보를 가져올때 필요한 id값 체크 용도
 
@@ -18,7 +20,7 @@ const {uwbData, uwbGet } = useSelector(state=>({
 
 useEffect(()=>{  //주기적으로 uwb데이터 요청
   const interval = setInterval(() => {
-     dispatch(locationData());
+    // / dispatch(locationData());
   }, 1000);
 
   return () => clearInterval(interval); //컴포넌트 이탈시 반복 제거
@@ -43,6 +45,7 @@ const longi =(uwb)=>{ // 경도를 이미지위에 표시하기위한 식
 
 const pointColor =(uwbId)=>{ //id값당 색 지정해줘서 표시
   let colorArr =['#FF0000', '#FFE400', '#000000', '#1FDA11', '#00D8FF', '#0900FF', '#6600FF', '#FF00DD', '#FF5E00', '#FFFFFF'];
+  //색 21
   let res = colorArr[uwbId-1];
   return res;
 }
@@ -59,10 +62,11 @@ const testConsole=()=>{ // 콘솔 테스트
    //console.log(uwbGet);
 }
 
+
   return(
     <>
       {uwbData&&testConsole() }
-      <UwbForm tagInfo={tagInfo} tagId={tagId} setTagId={setTagId} pointColor={pointColor} lati={lati} longi={longi}
+      <UwbForm GoogleMaps={GoogleMaps} tagInfo={tagInfo} tagId={tagId} setTagId={setTagId} pointColor={pointColor} lati={lati} longi={longi}
                       width={width} height={height} uwbData={uwbData} />
     </>
   );

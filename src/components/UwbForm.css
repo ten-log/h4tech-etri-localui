@@ -1,13 +1,74 @@
-.UwbForm { display:flex; min-height: 100vh; min-width: 100vw; background-color: red; }
-.UwbForm .UwbForm1{ flex:1;  background-color: blue; }
-.UwbForm .UwbForm2{  flex:1;  background-color: pink;}
-.UwbForm .UwbForm2 .UwbForm_ground{ position:relative; width:25vw; height:80vh;}
-.UwbForm .UwbForm2 img{position:absolute; width:25vw; height:80vh;}
-.UwbForm .UwbForm2 .UwbForm_point{width:0.3vw; height:0.3vw; border-radius:50vw}
-.UwbForm .UwbForm3{ flex:1; background-color: white; }
+.UwbForm { display:flex; min-height: 90vh; min-width: 100vw; }
+.UwbForm .UwbForm1{ flex:3; margin-left: 1vw;}
+.UwbForm .UwbForm2{ flex:1.2;  }
+.UwbForm .UwbForm2 .UwbForm2_Top{ display: flex; flex-direction: row; }
+.UwbForm .UwbForm2 .UwbForm2_Bottom{ margin-top: 4vw;display: flex;}
 
 
+table.PName {
+border-collapse: collapse;
+/* line-height: 1.5; */
+border: 0.1vw solid #ccc;
 
+}
+table.PName thead {
+font-weight: bold;
+color:#FFFFFF;
+/* border-right: 1px solid #ccc;
+border-left: 1px solid #ccc; */
+background: #e7708d;
+}
+table.PName thead th {
+padding: 10px;
+font-weight: bold;
+vertical-align: top;
+color: #fff;
+}
+table.PName tbody th {
+
+height: 11vh;
+padding: 1vw;
+font-weight: bold;
+border-bottom: 1px solid #ccc;
+background: #fcf1f4;
+}
+table.PName td {
+width: 3vw;
+padding: 1vw;
+border-bottom: 1px solid #ccc;
+}
+
+table.PInfo {
+border-collapse: collapse;
+/* line-height: 1.5; */
+border: 0.1vw solid #ccc;
+
+}
+table.PInfo thead {
+/* border-right: 1px solid #ccc;
+border-left: 1px solid #ccc; */
+background: #e7708d;
+}
+table.PInfo thead th {
+padding: 10px;
+font-weight: bold;
+vertical-align: top;
+color: #fff;
+}
+table.PInfo tbody th {
+width: 10vw;
+padding: 1vw;
+font-weight: bold;
+vertical-align: top;
+border-bottom: 1px solid #ccc;
+background: #fcf1f4;
+}
+table.PInfo td {
+width: 10vw;
+padding: 1vw;
+/* vertical-align: top; */
+border-bottom: 1px solid #ccc;
+}
 
 
  /*

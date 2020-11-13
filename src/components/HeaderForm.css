@@ -1,0 +1,33 @@
+.HeaderForm {
+  min-width: 98vw;
+  height: 8vh;
+  padding: 1vh;
+  background-color:#e7708d;
+  background-clip: content-box;
+  color:#FFFFFF;
+  display: flex;
+
+
+}
+.HeaderForm .tag {
+  width:30vw;
+  height: 8vh;
+  display: flex;
+  padding: 3vw;
+
+  font-size: 1.1vw;
+  font-weight: bold;
+  text-shadow: 0.1vw 0.1vw 0.1vw gray;
+}
+
+.HeaderForm .titleName {
+  width:80vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.1vw;
+  font-weight: bold;
+  text-shadow: 0.1vw 0.1vw 0.1vw gray;
+}

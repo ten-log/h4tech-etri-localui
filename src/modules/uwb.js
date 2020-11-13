@@ -10,7 +10,8 @@ export const locationData = createAction(LOCATION_DATA);
 
 //사가 생성 createRequestSaga(LOCATION_DATA , uwbAPI.GetUwbData);
 let sumRes=[];
-let sumRes2=[[],[],[],[],[],[],[],[],[],[],[]];
+let sumRes2=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
+// 0 부터 21개까지의 22개 배열 하지만 0번째는 안씀.
 function * locationDataSaga(action){
   try{
     let res = yield call(uwbAPI.GetUwbData, action.payload);
